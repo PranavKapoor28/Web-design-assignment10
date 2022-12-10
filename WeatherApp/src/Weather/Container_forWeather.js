@@ -1,9 +1,9 @@
 import React from "react";
-import WeatherData from "./WeatherData";
+import WeatherData from "./Data_forWeather";
 import TextField from "@material-ui/core/TextField";
 var moment = require("moment");
 
-class WeatherContainer extends React.Component {
+class Container_forWeather extends React.Component {
   state = {
     completeData: [],
     dailyData: [],
@@ -13,10 +13,10 @@ class WeatherContainer extends React.Component {
 
   render() {
     let display;
-    let headingweather;
+    let title;
     if (this.state.completeData.length > 0 || this.state.hasError === "false") {
       display = this.displayData();
-      headingweather = <h1>Weather Report for the city : {this.state.cityName} </h1>;
+      title = <h1>Weather Report for : {this.state.cityName} </h1>;
     } else {
       display = <h5 style={{ textAlign: "center" }} className="my-3" > Enter City in Search Bar</h5 >;
     }
@@ -30,8 +30,6 @@ class WeatherContainer extends React.Component {
 
         <div className="container">
 
-          {/* <hr /> */}
-          {/* <h3>Weather Forecast</h3> */}
           <br />
           <br />
           <TextField
@@ -55,7 +53,11 @@ class WeatherContainer extends React.Component {
           <br></br>
         </div>
         <br></br>
-        <div className="dataDisplay"><div><h1>{headingweather}</h1></div><br></br>
+        <div className="dataDisplay">
+          <div>
+            <h1>{title}</h1>
+          </div>
+          <br></br>
           <div className="cardDisplay">{display}</div></div>
       </div>
     );
@@ -75,7 +77,7 @@ class WeatherContainer extends React.Component {
       .then((res) => {
         if (!res.ok) {
           if (res.status !== 400 || res.status == 404) {
-            alert(`Error! Invalid Place`);
+            alert(`Please enter correct city name!!!`);
           }
         }
         return res.json()
@@ -121,4 +123,4 @@ class WeatherContainer extends React.Component {
   };
 }
 
-export default WeatherContainer;
+export default Container_forWeather;

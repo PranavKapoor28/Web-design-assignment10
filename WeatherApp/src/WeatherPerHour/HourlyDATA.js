@@ -1,7 +1,7 @@
 import React from "react";
 var moment = require("moment");
 
-class HourlyForecast extends React.Component {
+class HourlyDATA extends React.Component {
   render() {
     let _date = new Date();
     const weekday = this.props.data.dt * 1000;
@@ -41,4 +41,4 @@ class HourlyForecast extends React.Component {
   }
 }
 
-export default HourlyForecast;
+export default HourlyDATA;

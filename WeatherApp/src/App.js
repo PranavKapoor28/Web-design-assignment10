@@ -1,7 +1,7 @@
 import React from "react";
 import "./App.css";
-import WeatherContainer from "./WeatherContainer";
-import Hourly from "./Hourly";
+import WeatherContainer from "./Weather/Container_forWeather";
+import Hourly from "./WeatherPerHour/Hourly";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 class App extends React.Component {

@@ -1,6 +1,6 @@
 import React from "react";
-import DisplayData from "./WeatherData";
-import HourlyCityForecast from "./HourlyCityForecast";
+import DisplayData from "../Weather/Data_forWeather";
+import HourlyDATA from "./HourlyDATA";
 var moment = require("moment");
 
 class Hourly extends React.Component {
@@ -39,7 +39,7 @@ class Hourly extends React.Component {
 
   displayHourlyData = () => {
     return this.state._data.map((value, index) => (
-      <HourlyCityForecast data={value} key={index} />
+      <HourlyDATA data={value} key={index} />
     ));
   };
 }

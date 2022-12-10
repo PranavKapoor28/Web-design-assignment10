@@ -7,10 +7,10 @@ import {
   Redirect,
   withRouter,
 } from "react-router-dom";
-import Hourly from "./Hourly";
+import Hourly from "../WeatherPerHour/Hourly";
 import { render } from "@testing-library/react";
-import App from "./App";
-import "./index.css";
+import App from "../App";
+import "../index.css";
 
 
 var moment = require("moment");
@@ -19,6 +19,7 @@ class WeatherData extends React.Component {
 
   //const DisplayData = ({ reading, index, completeData }) => {
   render() {
+
     let _date = new Date();
     const weekday = this.props.reading.dt * 1000;
     _date.setTime(weekday);
@@ -28,6 +29,10 @@ class WeatherData extends React.Component {
 
     const farenheitTemp = this.props.reading.main.temp;
     const feelsLike = this.props.reading.main.feels_like;
+
+    console.log(farenheitTemp);
+    console.log(farenheitTemp);
+    console.log(farenheitTemp); const fahrenhetMax = Math.floor(Math.random() * 10) + 1 + fahrenheitMin;
     console.log(farenheitTemp);
 
     return (
@@ -54,7 +59,7 @@ class WeatherData extends React.Component {
                   <h5>Temperature: {farenheitTemp}°F</h5>
                   <h6>Feels Like: {feelsLike}°F</h6>
                   <p>
-                    Minimum: {fahrenheitMin}°F and Maximum: {fahrenheitMax}°F
+                    Minimum: {fahrenheitMin}°F and Maximum: {fahrenhetMax}°F
                   </p>
                 </div>
               </div>
